@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon';
+import { SOCIAL_LINKS } from '@/config';
+---
+
+<ul class="flex flex-row gap-x-8 justify-center" role="list">
+  {Object.keys(SOCIAL_LINKS).map((link) => (
+    <li class="w-10 h-10 grid place-items-center">
+      <a class="group duration-50 ease-out hover:-translate-y-1 block transition-transform" href={SOCIAL_LINKS[link].url}>
+        <Icon pack="bi" name={SOCIAL_LINKS[link].icon} title={SOCIAL_LINKS[link].name} width="30" />
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style lang="css">
+  [astro-icon] {
+    @apply text-sky-600 group-active:text-sky-700 group-focus:text-sky-700 group-focus-within:text-sky-700;
+  }
+</style>
