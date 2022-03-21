@@ -8,4 +8,9 @@ export default defineConfig({
     site: 'https://tacomaporchfest.org',
     sitemap: true,
   },
+  vite: {
+    ssr: {
+      external: ['svgo'],
+    },
+  },
 });
