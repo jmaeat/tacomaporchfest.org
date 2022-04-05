@@ -10,14 +10,14 @@ export type SocialLink = {
 
 export const SOCIAL_LINKS: SocialLinks = {
   facebook: {
-    url: '#',
+    url: 'https://www.facebook.com/TacomaPorchFest',
     name: 'Facebook',
     icon: 'facebook',
   },
-  twitter: {
-    url: '#',
-    name: 'Twitter',
-    icon: 'twitter',
+  instagram: {
+    url: 'https://instagram.com/tacomaporchfest',
+    name: 'Instagram',
+    icon: 'instagram',
   },
   email: {
     url: 'mailto:tacomaporchfest@gmail.com',
