@@ -1,0 +1,38 @@
+---
+import { SITE_DETAILS } from '@/config';
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props as Props;
+const image = {
+  href: `https://cdn.statically.io/og/theme=dark/${title}.png`,
+  alt: `Open Graph image for the ${title} page`
+};
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{`${title} | ${SITE_DETAILS.title}`}</title>
+
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image.href} />
+<meta property="og:image:alt" content={image.alt} />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.canonicalURL} />
+
+<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+<!-- <meta name="twitter:site" content="@tacomaporchfest" /> -->
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{image && (<meta name="twitter:image" content={image.href} />)}
+
+<link rel="canonical" href={Astro.canonicalURL} />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎸</text></svg>" />
+
+<meta name="theme-color" content="#202425" />
