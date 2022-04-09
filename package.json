@@ -9,12 +9,13 @@
   },
   "devDependencies": {
     "prettier": "^2.6.2",
+    "prettier-plugin-astro": "^0.0.12",
     "prettier-plugin-tailwindcss": "^0.1.8"
   },
   "dependencies": {
-    "astro": "0.26.0",
     "@astrojs/tailwind": "0.1.0",
     "@fontsource/poppins": "^4.5.3",
+    "astro": "0.26.0",
     "astro-icon": "^0.6.0",
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",
