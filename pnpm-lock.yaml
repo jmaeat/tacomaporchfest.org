@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@astrojs/tailwind': 0.1.0
   '@fontsource/poppins': ^4.5.3
-  astro: 0.26.0
+  astro: 1.0.0-beta.5
   astro-icon: ^0.6.0
   autoprefixer: ^10.4.4
   postcss: ^8.4.12
@@ -15,7 +15,7 @@ specifiers:
 dependencies:
   '@astrojs/tailwind': 0.1.0
   '@fontsource/poppins': 4.5.5
-  astro: 0.26.0
+  astro: 1.0.0-beta.5
   astro-icon: 0.6.1
   autoprefixer: 10.4.4_postcss@8.4.12
   postcss: 8.4.12
@@ -644,8 +644,8 @@ packages:
       svgo: 2.8.0
     dev: false
 
-  /astro/0.26.0:
-    resolution: {integrity: sha512-5VT0bhy2L2/T+xekHBbbdPqgt0hvemu0YXeTaWcWBCj0ftwlrmcWs4GmeQIUilxvspKWn47SSnqP2SF/3cN/Fw==}
+  /astro/1.0.0-beta.5:
+    resolution: {integrity: sha512-BzAsTPg+2VwmchtUkv9LthX7LVDq+sgLTzk5U3XfXqy6wTtexJ/RT99rC3Q2a4TyZqxm+Y/69i7fWmsdvf6p5A==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
