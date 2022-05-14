@@ -7,7 +7,7 @@ export default defineConfig({
 		integrations: true,
 	},
 	integrations: [compress({ html: false }), tailwind()],
-	site: 'https://tacomaporchfest.org',
+	site: 'https://www.tacomaporchfest.org',
 	vite: {
 		ssr: {
 			external: ['svgo'],
