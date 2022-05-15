@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@astrojs/tailwind': 0.2.1
-  '@fontsource/poppins': ^4.5.3
+  '@fontsource/inter': ^4.5.10
   astro: 1.0.0-beta.27
   astro-compress: ^0.0.6
   astro-icon: ^0.7.1
@@ -15,7 +15,7 @@ specifiers:
 
 dependencies:
   '@astrojs/tailwind': 0.2.1
-  '@fontsource/poppins': 4.5.5
+  '@fontsource/inter': 4.5.10
   astro: 1.0.0-beta.27
   astro-compress: 0.0.6
   astro-icon: 0.7.1
@@ -343,8 +343,8 @@ packages:
     resolution: {integrity: sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==}
     dev: false
 
-  /@fontsource/poppins/4.5.5:
-    resolution: {integrity: sha512-fqRWOQDhfoJoxP98qwMQLvLcgOu13yib6rZjL5UqpurobIaWTweqzo95uOLOGBjEE0bMMAbfDMoFUTL8Byrdeg==}
+  /@fontsource/inter/4.5.10:
+    resolution: {integrity: sha512-YOt2/K8yo25MVBjrTImHxVimmyZEt0GcrWp2w7O29sdFX9SJqbGlOqjFJ1wI5yBbP6AmTeimyPE0UC/jjFRoIA==}
     dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
