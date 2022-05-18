@@ -1,53 +1,33 @@
 ---
-import '@fontsource/inter';
-import '@fontsource/inter/500.css';
-import '@styles/global.scss';
-import '@styles/tailwind.css';
-import '@fontsource/poppins/latin.css';
+import BaseLayout from '@layouts/BaseLayout.astro';
 
-import BaseHead from '@/components/BaseHead.astro';
-import Header from '@/components/Header.astro';
-import Footer from '@/components/Footer.astro';
-
-const title = 'Free Music Festival in Tacoma';
+const title = 'Free Music Festival in Tacoma, WA';
 const description =
-	'Porchfest is a walkable music festival held on front porches featuring local artists, connecting neighbors, and building community.';
+	'Tacoma Porchfest is a free, walkable music festival in Central Tacoma. Help us accomplish our inaugural year!';
 ---
 
-<html lang="en" class="h-full bg-[#F2F7F8]">
-	<head>
-		<BaseHead {title} {description} />
-	</head>
-	<body class="h-full">
-		<header class="max-w-[1080px] mx-auto px-4">
-			<Header />
-		</header>
-		<main>
-			<section
-				class="my-8 lg:my-16 max-w-[1080px] mx-auto texture-background bg-sky-200 py-16 md:py-40 lg:py-52 grid place-items-center"
-				aria-labelledby="#site-hero"
-			>
-				<h1
-					id="site-hero"
-					class="bg-sky-200 !leading-snug text-center font-serif md:p-4 text-2xl md:text-5xl"
-				>
-					<span class="font-bold">Tacoma Porchfest</span><br />
-					Sat, August 6th 2022, 1&ndash;5 pm
-				</h1>
-			</section>
-			<div class="mx-auto max-w-[1080px] px-4">
-				<div class="sm:max-w-sm mx-auto">
-					<h2 class="text-2xl font-serif mb-4 md:mb-6 md:text-4xl">What is Porchfest?</h2>
-					<p class="md:text-lg">
-						Porchfest is a walkable music festival held on front porches featuring local artists,
-						connecting neighbors, and building community. It’s a grassroots movement being done all
-						over the country and now coming to central Tacoma!
-					</p>
-				</div>
-			</div>
-		</main>
-		<footer class="sticky top-[100vh] mt-10 border-t-2 border-sky-100">
-			<Footer />
-		</footer>
-	</body>
-</html>
+<BaseLayout {title} {description}>
+	<section
+		class="my-8 lg:my-16 container texture-background bg-primary py-16 md:py-40 lg:py-52 grid place-items-center relative overflow-clip"
+		aria-labelledby="#site-hero"
+	>
+		<h1
+			id="site-hero"
+			class="bg-primary !leading-snug text-center font-serif font-bold md:p-4 text-3xl md:text-[56px] text-copy"
+		>
+			Sat, August 6th 2022<br />
+			1:00&ndash;5:00 pm
+		</h1>
+	</section>
+	<div class="container">
+		<div class="sm:max-w-sm mx-auto">
+			<h2 class="text-2xl font-serif font-bold mb-4 md:mb-6 md:text-4xl">What is Porchfest?</h2>
+			<p class="md:text-lg">
+				Porchfest is a free, walkable music festival where front porches become musical stages for
+				one magical afternoon. We are looking for homes to volunteer their porches or front yards <em
+					>and</em
+				> we are looking for musicians and artists to perform.
+			</p>
+		</div>
+	</div>
+</BaseLayout>

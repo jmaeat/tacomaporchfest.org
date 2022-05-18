@@ -1,40 +1,33 @@
-<img
-	class="my-6 md:my-12 mx-auto block w-40 h-40 lg:w-44 lg:h-44 rounded-full object-cover"
-	src="/logo.png"
-	alt="Tacoma Porchfest Logo"
-/>
+---
+import SiteBanner from '@/components/SiteBanner.astro';
 
-<nav>
+const navLinks = {
+	band: {
+		name: 'Band Sign-up',
+		href: 'https://docs.google.com/forms/d/e/1FAIpQLScJqUDW9TRqWmAGmf8PuGnVDV80tJ2zfLTUMlFP89nD5lTAew/viewform',
+	},
+	porch: {
+		name: 'Porch Sign-up',
+		href: 'https://docs.google.com/forms/d/e/1FAIpQLSczgkg6v7A_CSeRYz-AqgI-rysBxGL5HWABSKR6Ea_6ENBQ2w/viewform',
+	},
+	contact: {
+		name: 'Get in Touch',
+		href: 'mailto:tacomaporchfest@gmail.com?subject=Hey, Porchfest!',
+	},
+};
+---
+<nav class="first:text-center relative container border-b border-copy border-opacity-10">
+	<SiteBanner />
 	<ul
-		class="flex justify-between sm:gap-x-6 sm:justify-center md:gap-x-12 flex-wrap font-medium text-sm lg:text-xl leading-none"
+		class="flex gap-6 sm:gap-x-6 justify-center md:gap-x-12 flex-wrap font-medium text-sm lg:text-lg leading-none py-3"
 		role="list"
 	>
-		<li>
-			<a
-				class="nav-link"
-				href="https://docs.google.com/forms/d/e/1FAIpQLScJqUDW9TRqWmAGmf8PuGnVDV80tJ2zfLTUMlFP89nD5lTAew/viewform"
-				rel="noopener noreferer nofollow"
-			>
-				Band Sign-up
-			</a>
-		</li>
-		<li>
-			<a
-				class="nav-link"
-				href="https://docs.google.com/forms/d/e/1FAIpQLSczgkg6v7A_CSeRYz-AqgI-rysBxGL5HWABSKR6Ea_6ENBQ2w/viewform"
-				rel="noopener noreferer nofollow"
-			>
-				Porch Owners
-			</a>
-		</li>
-		<li>
-			<a class="nav-link" href="mailto:tacomaporchfest@gmail.com"> Contact </a>
-		</li>
+		{Object.keys(navLinks).map((navLink) =>
+			<li>
+				<a class="font-medium px-3 py-2 lg:py-[10px] border-b-4 border-transparent hover:border-secondary active:border-secondary focus:border-secondary transition-colors duration-200 ease-in-out" href={navLinks[navLink].href}>
+					{navLinks[navLink].name}
+				</a>
+			</li>
+		)}
 	</ul>
 </nav>
-
-<style>
-	.nav-link {
-		@apply hover:bg-sky-200 rounded-xl transition-colors duration-300 ease-in-out px-3 py-2 active:outline-sky-200 focus:bg-sky-200 outline-none focus:outline-sky-200;
-	}
-</style>
