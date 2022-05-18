@@ -11,16 +11,18 @@ specifiers:
   prettier: ^2.6.2
   prettier-plugin-astro: ^0.0.12
   prettier-plugin-tailwindcss: ^0.1.10
+  sass: ^1.51.0
   tailwindcss: ^3.0.24
 
 dependencies:
   '@astrojs/tailwind': 0.2.1
   '@fontsource/inter': 4.5.10
-  astro: 1.0.0-beta.27
+  astro: 1.0.0-beta.27_sass@1.51.0
   astro-compress: 0.0.6
   astro-icon: 0.7.1
   autoprefixer: 10.4.4_postcss@8.4.12
   postcss: 8.4.12
+  sass: 1.51.0
   tailwindcss: 3.0.24
 
 devDependencies:
@@ -660,7 +662,7 @@ packages:
       svgo: 2.8.0
     dev: false
 
-  /astro/1.0.0-beta.27:
+  /astro/1.0.0-beta.27_sass@1.51.0:
     resolution: {integrity: sha512-LyxZcFi1bAHAHcNjLyTADSOi1OfGs3WhM83BCvjTMR/2uD1nrdPYXog0nces+rOIPt/ZvonbRfaeBLHZeIY6ZQ==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
@@ -719,7 +721,7 @@ packages:
       strip-ansi: 7.0.1
       supports-esm: 1.0.0
       tsconfig-resolver: 3.0.1
-      vite: 2.9.9
+      vite: 2.9.9_sass@1.51.0
       yargs-parser: 21.0.1
       zod: 3.14.4
     transitivePeerDependencies:
@@ -1973,6 +1975,10 @@ packages:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
     engines: {node: '>= 4'}
     dev: true
+
+  /immutable/4.0.0:
+    resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==}
+    dev: false
 
   /indent-string/4.0.0:
     resolution: {integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==}
@@ -3574,6 +3580,16 @@ packages:
       suf-regex: 0.3.4
     dev: true
 
+  /sass/1.51.0:
+    resolution: {integrity: sha512-haGdpTgywJTvHC2b91GSq+clTKGbtkkZmVAb82jZQN/wTy6qs8DdFm2lhEQbEwrY0QDRgSQ3xDurqM977C3noA==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.0.0
+      source-map-js: 1.0.2
+    dev: false
+
   /section-matter/1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
     engines: {node: '>=4'}
@@ -4175,7 +4191,7 @@ packages:
       vfile-message: 3.1.2
     dev: false
 
-  /vite/2.9.9:
+  /vite/2.9.9_sass@1.51.0:
     resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
     engines: {node: '>=12.2.0'}
     hasBin: true
@@ -4195,6 +4211,7 @@ packages:
       postcss: 8.4.13
       resolve: 1.22.0
       rollup: 2.73.0
+      sass: 1.51.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: false
