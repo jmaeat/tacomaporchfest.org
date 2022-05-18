@@ -1,0 +1,16 @@
+$recoleta-woff-path: '/font/recoleta/woff/recoleta';
+$recoleta-woff2-path: '/font/recoleta/woff2/recoleta';
+$weights: 100, 300, 400, 500, 600, 700, 900;
+
+@each $weight in $weights {
+	@font-face {
+		font-family: 'Recoleta';
+		src: local('Recoleta'),
+			url('#{$recoleta-woff2-path}-#{$weight}-webfont.woff2') format('woff2')
+				url('#{$recoleta-woff-path}-#{$weight}-webfont.woff') format('woff');
+		font-weight: $weight;
+		font-display: swap;
+		font-style: normal;
+		text-rendering: auto;
+	}
+}
