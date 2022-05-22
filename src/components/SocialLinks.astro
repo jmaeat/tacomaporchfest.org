@@ -6,15 +6,9 @@ import { SOCIAL_LINKS } from '@/config';
 <ul class="flex flex-row gap-x-8 justify-center" role="list">
 	{Object.keys(SOCIAL_LINKS).map((link) => (
 		<li class="w-10 h-10 grid place-items-center">
-			<a class="group duration-50 ease-out hover:-translate-y-1 block transition-transform" href={SOCIAL_LINKS[link].url} rel="noopener nofollow noreferer">
-				<Icon pack="bi" name={SOCIAL_LINKS[link].icon} title={SOCIAL_LINKS[link].name} width="30" />
+			<a class="group duration-50 ease-out hover:-translate-y-1 block transition-transform group" href={SOCIAL_LINKS[link].url} rel="noopener nofollow noreferer">
+				<Icon pack="bi" name={SOCIAL_LINKS[link].icon} title={SOCIAL_LINKS[link].name} width="32" class="h-8 w-8 text-copy group-hover:text-opacity-70" />
 			</a>
 		</li>
 	))}
 </ul>
-
-<style lang="css">
-	[astro-icon] {
-		@apply text-[#8AA1B1] group-active:text-[#7892A5] group-focus:text-[#7892A5] group-focus-within:text-[#7892A5];
-	}
-</style>
