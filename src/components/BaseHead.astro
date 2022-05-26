@@ -9,7 +9,7 @@ export interface Props {
 const { title, description } = Astro.props as Props;
 
 const image = {
-  href: `https://cdn.statically.io/og/theme=dark/${title}.png`,
+  href: `https://cdn.statically.io/og/theme=dark/${SITE_DETAILS.title}.png`,
   alt: `Open Graph image for the ${title} page`
 };
 ---
