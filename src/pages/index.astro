@@ -1,17 +1,28 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import HeroSection from '@components/HeroSection.astro';
+import PostPreview from '@components/PostPreview.astro';
 
 const title = 'Free Music Festival in Tacoma, WA';
 const description =
 	'Tacoma Porchfest is a free, walkable music festival in Central Tacoma. Help us accomplish our inaugural year!';
+
+let allPosts = await Astro.glob('./updates/*.md');
+allPosts = allPosts.sort(
+	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+);
 ---
 
 <BaseLayout {title} {description}>
 	<HeroSection />
 	<div class="container grid md:grid-cols-2 gap-8">
-		<div>
-			<em>Update posts coming soon...</em>
+		<div class="text-right">
+			<ul role="list" class="mb-10">
+				{allPosts.map((post) =>
+					<PostPreview post={post} />
+				)}
+			</ul>
+			<a class="underline text-secondary" href="/updates">See more updates &rarr;</a>
 		</div>
 		<div class="lg:pl-8">
 			<h2 class="text-2xl font-serif font-bold mb-4 md:mb-6 md:text-4xl">What is Porchfest?</h2>
@@ -23,9 +34,13 @@ const description =
 			</p>
 			<h2 class="text-2xl font-serif font-bold mb-4 md:mb-6 md:text-4xl">Donate to Porchfest</h2>
 			<p class="md:text-lg mb-6">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed nisi lacus sed viverra.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+				labore et dolore magna aliqua. Sed nisi lacus sed viverra.
 			</p>
-			<a class="text-center block rounded-lg p-4 bg-secondary text-white font-medium hover:bg-opacity-75 transition-colors duration-300 ease-in-out" href="#">Donate now &mdash; thank you!</a>
+			<a
+				class="text-center block rounded-lg p-4 bg-secondary text-white font-medium hover:bg-opacity-75 transition-colors duration-300 ease-in-out"
+				href="#">Donate now &mdash; thank you!</a
+			>
 		</div>
 	</div>
 </BaseLayout>
