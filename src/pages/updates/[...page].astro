@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PostPreview from '@components/PostPreview.astro';
+
+export async function getStaticPaths({ paginate }) {
+	let allPosts = await Astro.glob('../updates/*.md');
+	allPosts = allPosts.sort(
+		(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+	);
+
+	return paginate(allPosts, {
+		pageSize: 12,
+	});
+}
+
+const { page } = Astro.props;
+
+const title = 'Latest Updates';
+const description = 'The latest details about the Porchfest festival.';
+const prev = page.url.prev;
+const next = page.url.next;
+---
+
+<BaseLayout {title} {description} {prev} {next}>
+	<section class="container my-8 lg:my-16" aria-labelledby="#title">
+		<h1 id="title" class="font-bold font-serif text-5xl text-center mb-10">Latest Updates</h1>
+		<ul role="list" class="flex flex-col gap-5 max-w-2xl mx-auto">
+			{page.data.map((post) =>
+				<PostPreview {post} />
+			)}
+		</ul>
+	</section>
+</BaseLayout>

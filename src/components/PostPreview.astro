@@ -1,0 +1,23 @@
+---
+import { machineDate, readableDate } from '@/scripts/dates';
+
+export interface Props {
+	post: any;
+}
+
+const { post } = Astro.props as Props;
+---
+
+<li
+	class="flex gap-x-10 justify-between items-center bg-white border border-copy border-opacity-10 p-4 rounded"
+>
+	<a
+		href={post.url}
+		class="underline font-bold font-serif text-primary text-xl hover:opacity-75 active:opacity-75 focus:opacity-75"
+	>
+		<h2>{post.frontmatter.title}</h2>
+	</a>
+	<time datetime={machineDate(post.frontmatter.date)} class="text-sm">
+		{readableDate(post.frontmatter.date)}
+	</time>
+</li>
