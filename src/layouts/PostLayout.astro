@@ -6,7 +6,12 @@ import { machineDate, readableDate } from '@/scripts/dates';
 const { content } = Astro.props;
 ---
 
-<BaseLayout title={content.title} description={content.description}>
+<BaseLayout
+	title={content.title}
+	description={content.description}
+	type="article"
+	datePublished={machineDate(content.date)}
+>
 	<article class="container">
 		<header class="my-8 lg:my-16 text-center">
 			<h1 class="font-serif font-bold md:p-4 text-3xl md:text-[56px] mb-6">{content.title}</h1>
