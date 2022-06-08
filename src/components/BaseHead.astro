@@ -9,8 +9,8 @@ export interface Props {
 const { title, description } = Astro.props as Props;
 
 const image = {
-  href: `https://cdn.statically.io/og/theme=dark/${SITE_DETAILS.title}.png`,
-  alt: `Open Graph image for the ${title} page`
+  href: `${Astro.site}tacomapf_og.png`,
+  alt: `A drawing of an octopus playing multiple instrustments. The text on the image says: Free Live Music, Central Tacoma. Tacoma Porchfest, Aug 6th, 1-6 pm.`
 };
 ---
 <meta charset="utf-8" />
@@ -20,7 +20,7 @@ const image = {
 
 <meta name="description" content={description} />
 {import.meta.env.PROD ? (
-	<meta name="robots" content="follow, index" />
+	<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
 ) : (
 	<meta name="robots" content="follow, noindex" />
 )}
@@ -33,8 +33,9 @@ const image = {
 <meta property="og:site_name" content={SITE_DETAILS.title} />
 <meta property="og:image" content={image.href} />
 <meta property="og:image:alt" content={image.alt} />
-<meta property="og:image:width" content="1315" />
-<meta property="og:image:height" content="751" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
 <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
 <!-- <meta name="twitter:site" content="@tacomaporchfest" /> -->
