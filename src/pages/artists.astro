@@ -2,9 +2,11 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import FormEmbed from '@components/FormEmbed.astro';
 
-const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLScJqUDW9TRqWmAGmf8PuGnVDV80tJ2zfLTUMlFP89nD5lTAew/viewform?usp=sf_link';
+const formURL =
+	'https://docs.google.com/forms/d/e/1FAIpQLScJqUDW9TRqWmAGmf8PuGnVDV80tJ2zfLTUMlFP89nD5lTAew/viewform?usp=sf_link';
 
-const title ='Artist Applications', description = 'Sign up to be an incredible performer for our inaugural season!';
+const title = 'Artist Applications',
+	description = 'Sign up to be an incredible performer for our inaugural season!';
 ---
 
 <BaseLayout {title} {description}>
@@ -14,32 +16,18 @@ const title ='Artist Applications', description = 'Sign up to be an incredible p
 			<div class="lg:pr-8">
 				<h2 class="text-2xl font-serif font-bold mb-4 md:mb-6 md:text-4xl">Sign-up Information</h2>
 				<p>
-					Our inaugural Porchfest will be held on Saturday, August 6th from 12:00–6:00pm.
+					We welcome all artists, performers, and musicians who want to be part of Tacoma Porchfest.
+					This is a free event and we are all volunteers. However, we encourage performers to set up
+					their own tip jar and tip links, sell merchandise, and otherwise promote themselves at
+					their assigned porch.
 					<br /><br />
-					Want to be a porch host for Tacoma Porchfest? We’re looking for awesome neighbors who are interested helping this wonderful festival take place.
-					<br /><br />
-					This is an open call for porch hosts! Submit your information using the form.
-				</p>
-				<h3 class="py-4 font-bold font-serif text-2xl">Artist Requirements</h3>
-				<p>
-					<ul class="list-disc pl-4 space-y-2">
-						<li>Be available on the 6th of August.</li>
-						<li>Fill out the form. 😅</li>
-						<li>Get the word out to your neighbors and friends!</li>
-					</ul>
-				</p>
-				<h3 class="py-4 font-bold font-serif text-2xl">Additional Information:</h3>
-				<p>
-					<ul class="list-disc pl-4 space-y-2">
-						<li>All addresses are vetted and approved through city officials.</li>
-						<li>All approved addresses are included in the event's insurance.</li>
-						<li>Open call remains for now–June and confirmed by July.</li>
-						<li>Questions? <a class="underline text-secondary" href="mailto:tacomaporchfest@gmail.com">Email us!</a></li>
-					</ul>
+					We are actively seeking funding opportunities via grants and business sponsorships and we have
+					set up a communal digital tip jar to raise money to help pay for your time and talent. All
+					proceeds we raise will be split across performers after the event.
 				</p>
 			</div>
 			<div>
-				<FormEmbed href={formURL} />
+				<FormEmbed href={formURL} title="Porchfest Artist Sign-up Form" />
 			</div>
 		</div>
 	</section>
