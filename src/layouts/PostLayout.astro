@@ -1,0 +1,43 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon';
+import { machineDate, readableDate } from '@/scripts/dates';
+
+const { content } = Astro.props;
+---
+
+<BaseLayout
+	title={content.title}
+	description={content.description}
+	type="article"
+	datePublished={machineDate(content.date)}
+	dateModified={machineDate(content.updated)}
+>
+	<article class="container">
+		<header class="my-8 lg:my-16 text-center">
+			<h1 class="font-serif font-bold md:p-4 text-4xl md:text-[56px] mb-6">{content.title}</h1>
+			<div class="flex flex-wrap justify-center items-center opacity-80 divide-x">
+				<div class="inline-flex items-center gap-x-2 px-3">
+					<Icon name="bi:clock" class="w-4 h-4" />
+					<p>
+						Posted on <time datetime={machineDate(content.date)}>{readableDate(content.date)}</time>
+					</p>
+				</div>
+				{(content.updated) && (
+					<div class="inline-flex items-center gap-x-2 px-3">
+						<Icon name="bi:clock" class="w-4 h-4" />
+						<p>
+							Updated on <time datetime={machineDate(content.updated)}
+								>{readableDate(content.updated)}</time
+							>
+						</p>
+					</div>
+				)}
+			</div>
+		</header>
+		<main class="prose prose-lg prose-copy max-w-2xl mx-auto prose-headings:font-serif">
+			<slot />
+		</main>
+		<footer></footer>
+	</article>
+</BaseLayout>

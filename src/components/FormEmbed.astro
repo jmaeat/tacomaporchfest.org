@@ -1,0 +1,16 @@
+---
+export interface Props {
+	href: string | URL;
+	title?: string;
+}
+
+const { href, title } = Astro.props as Props;
+---
+
+<iframe
+	class="border border-copy border-opacity-10 rounded-lg w-full h-[700px] bg-white"
+	src={`${href}`}
+	{title}
+	loading="lazy"
+	>Loading…
+</iframe>

@@ -1,33 +1,48 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import HeroSection from '@components/HeroSection.astro';
+import PostPreview from '@components/PostPreview.astro';
+import { Icon } from 'astro-icon';
 
 const title = 'Free Music Festival in Tacoma, WA';
 const description =
 	'Tacoma Porchfest is a free, walkable music festival in Central Tacoma. Help us accomplish our inaugural year!';
+
+let allPosts = await Astro.glob('./updates/*.md');
+allPosts = allPosts.filter((x) => x.frontmatter.hidden != true).sort(
+	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+);
 ---
 
 <BaseLayout {title} {description}>
-	<section
-		class="my-8 lg:my-16 container texture-background bg-primary py-16 md:py-40 lg:py-52 grid place-items-center relative overflow-clip"
-		aria-labelledby="#site-hero"
-	>
-		<h1
-			id="site-hero"
-			class="bg-primary !leading-snug text-center font-serif font-bold md:p-4 text-3xl md:text-[56px] text-copy"
-		>
-			Sat, August 6th 2022<br />
-			1:00&ndash;5:00 pm
-		</h1>
-	</section>
-	<div class="container">
-		<div class="sm:max-w-sm mx-auto">
+	<HeroSection />
+	<div class="container grid md:grid-cols-2 gap-8">
+		<div class="text-right">
+			<ul role="list" class="mb-10 space-y-2">
+				{allPosts.map((post) =>
+					<PostPreview post={post} />
+				)}
+			</ul>
+			<a class="underline text-secondary" href="/updates">See more updates &rarr;</a>
+		</div>
+		<div class="lg:pl-8">
 			<h2 class="text-2xl font-serif font-bold mb-4 md:mb-6 md:text-4xl">What is Porchfest?</h2>
-			<p class="md:text-lg">
+			<p class="md:text-lg mb-12 lg:mb-14">
 				Porchfest is a free, walkable music festival where front porches become musical stages for
 				one magical afternoon. We are looking for homes to volunteer their porches or front yards <em
 					>and</em
 				> we are looking for musicians and artists to perform.
 			</p>
+			<h2 class="text-2xl font-serif font-bold mb-4 md:mb-6 md:text-4xl">Donate to Porchfest</h2>
+			<p class="md:text-lg mb-6">
+				Support Tacoma artists!  We are all volunteers making this happen, and we need your help to pay Porchfest performers. Venmo: @tacomaporchfest
+			</p>
+			<a
+				class="text-center block rounded-lg p-4 bg-secondary text-white font-medium hover:bg-opacity-75 transition-colors duration-300 ease-in-out"
+				href="https://account.venmo.com/u/TacomaPorchfest" rel="noopener nofollower noreferer" target="_blank">
+					Donate now on Venmo &mdash; thank you!
+					<Icon name="fe:link-external" class="w-5 h-5 inline mb-[5px] ml-05" />
+			</a>
 		</div>
 	</div>
 </BaseLayout>

@@ -1,6 +1,4 @@
 ---
-import '@fontsource/inter';
-import '@fontsource/inter/500.css';
 import '@styles/global.scss';
 import '@styles/tailwind.css';
 
@@ -8,12 +6,12 @@ import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 
-const { title, description } = Astro.props;
+const { title, description, prev, next, type, datePublished, dateModified } = Astro.props;
 ---
 
 <html lang="en" class="h-full">
 	<head>
-		<BaseHead {title} {description} />
+		<BaseHead {title} {description} {prev} {next} {type} {datePublished} {dateModified} />
 	</head>
 	<body class="h-full text-copy bg-background bg-opacity-60">
 		<header>
@@ -22,7 +20,7 @@ const { title, description } = Astro.props;
 		<main>
 			<slot />
 		</main>
-		<footer class="sticky top-[100vh] mt-10 border-t-2 border-copy border-opacity-10">
+		<footer class="sticky top-[100vh] mt-20 border-t-2 border-copy border-opacity-10">
 			<Footer />
 		</footer>
 	</body>

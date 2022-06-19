@@ -1,0 +1,52 @@
+---
+const org = 'Tacoma Porchfest';
+const site = Astro.site;
+const canonical = Astro.canonicalURL;
+const ogImg = `${Astro.site}tacomapf_og.png`;
+
+// https://schema.org/WebSite
+const website = {
+	'@type': 'WebSite',
+	'@id': `${site}#website`,
+	url: site,
+	name: org,
+	publisher: {
+		'@id': `${site}#organization`,
+	},
+	inLanguage: 'en-US',
+};
+
+// https://developers.google.com/search/docs/advanced/structured-data/event
+const event = {
+	'@type': 'Event',
+	name: org,
+	startDate: '2022-08-06T13:00-08:00',
+	endDate: '2022-08-06T17:00-08:00',
+	location: {
+		'@type': 'Place',
+		geo: {
+			'@type': 'GeoCoordinates',
+			latitude: 47.2483608,
+			longitude: -122.4968032,
+		},
+		name: 'Central Tacoma',
+	},
+	eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+	eventStatus: 'https://schema.org/EventScheduled',
+	image: [ogImg],
+	description: 'Tacoma Porchfest is a free, walkable music festival in Central Tacoma.',
+	isAccessibleForFree: true,
+	organizer: {
+		'@type': 'Organization',
+		name: org,
+		url: canonical,
+	},
+};
+
+const schema = {
+	'@context': 'https://schema.org/',
+	'@graph': [website, event],
+};
+---
+
+<script set:html={JSON.stringify(schema)} type="application/ld+json"></script>

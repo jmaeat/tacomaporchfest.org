@@ -10,11 +10,11 @@ module.exports = {
 			current: 'currentColor',
 			black: colors.black,
 			white: colors.white,
-			background: '#F7F5ED',
-			copy: '#222325',
-			primary: '#FC7557',
-			secondary: '#FFC73A',
-			tertiary: '#6689FF',
+			background: '#F3EDCE',
+			copy: '#2E282A',
+			primary: '#ce4817',
+			secondary: '#495867',
+			tertiary: '#FFD275',
 		},
 		container: {
 			center: true,
@@ -34,5 +34,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 };
