@@ -3,7 +3,10 @@ layout: ../../layouts/PostLayout.astro
 title: Current Artist Lineup
 description: The latest lineup of artists performing at our inaugural festival this August.
 date: 2022-06-06
+updated: 2022-06-19
 ---
+
+We are accepting artists and performers until mid-July when we play match-maker with the porches who have signed up.  We are so excited about the mix of artists on the line-up — look it over, you probably know more than one of them as one of your neighbors!  Who knew our neighborhood and city was full of so much talent ready to share with all of us?
 
 ## List of Artists (so far) 👩‍🎤
 
