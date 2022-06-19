@@ -9,9 +9,10 @@ export interface Props {
 	prev?: string | URL;
 	type: string;
 	datePublished: string;
+	dateModified: string;
 }
 
-const { title, description, prev, next, type = "website", datePublished } = Astro.props as Props;
+const { title, description, prev, next, type = "website", datePublished, dateModified } = Astro.props as Props;
 
 const image = {
   href: `${Astro.site}tacomapf_og.png`,
@@ -36,6 +37,7 @@ const image = {
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.canonicalURL} />
 <meta property="og:site_name" content={SITE_DETAILS.title} />
+{dateModified && <meta property="og:updated_time" content={dateModified} />}
 {image && (
 	<meta property="og:image" content={image.href} />
 	<meta property="og:image:secure_url" content={image.href} />
@@ -47,6 +49,7 @@ const image = {
 
 {type === 'article' && <meta property="article:publisher" content={SOCIAL_LINKS.facebook.url} />}
 {datePublished && <meta property="article:published_time" content={datePublished} />}
+{dateModified && <meta property="article:modified_time" content={dateModified} />}
 
 <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
 <meta name="twitter:site" content="@tacomaporchfest" />

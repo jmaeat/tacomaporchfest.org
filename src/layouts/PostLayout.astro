@@ -11,6 +11,7 @@ const { content } = Astro.props;
 	description={content.description}
 	type="article"
 	datePublished={machineDate(content.date)}
+	dateModified={machineDate(content.updated)}
 >
 	<article class="container">
 		<header class="my-8 lg:my-16 text-center">
