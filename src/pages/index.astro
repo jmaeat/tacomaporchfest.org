@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import HeroSection from '@components/HeroSection.astro';
 import PostPreview from '@components/PostPreview.astro';
+import { Icon } from 'astro-icon';
 
 const title = 'Free Music Festival in Tacoma, WA';
 const description =
@@ -34,13 +35,14 @@ allPosts = allPosts.sort(
 			</p>
 			<h2 class="text-2xl font-serif font-bold mb-4 md:mb-6 md:text-4xl">Donate to Porchfest</h2>
 			<p class="md:text-lg mb-6">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-				labore et dolore magna aliqua. Sed nisi lacus sed viverra.
+				Support Tacoma artists!  We are all volunteers making this happen, and we need your help to pay Porchfest performers. Venmo: @tacomaporchfest
 			</p>
 			<a
 				class="text-center block rounded-lg p-4 bg-secondary text-white font-medium hover:bg-opacity-75 transition-colors duration-300 ease-in-out"
-				href="#">Donate now &mdash; thank you!</a
-			>
+				href="https://account.venmo.com/u/TacomaPorchfest" rel="noopener nofollower noreferer" target="_blank">
+					Donate now on Venmo &mdash; thank you!
+					<Icon name="fe:link-external" class="w-5 h-5 inline mb-[5px] ml-05" />
+			</a>
 		</div>
 	</div>
 </BaseLayout>
