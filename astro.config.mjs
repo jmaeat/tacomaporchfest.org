@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
-import tailwind from '@astrojs/tailwind';
+import critters from 'astro-critters';
+import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,9 +13,12 @@ export default defineConfig({
 	integrations: [
 		compress({
 			html: false,
+			svg: false,
 		}),
-		tailwind(),
+		critters(),
+		robotsTxt(),
 		sitemap(),
+		tailwind(),
 	],
 	site: 'https://www.tacomaporchfest.org',
 	vite: {
