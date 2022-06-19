@@ -9,7 +9,7 @@ const description =
 	'Tacoma Porchfest is a free, walkable music festival in Central Tacoma. Help us accomplish our inaugural year!';
 
 let allPosts = await Astro.glob('./updates/*.md');
-allPosts = allPosts.sort(
+allPosts = allPosts.filter((x) => x.frontmatter.hidden != true).sort(
 	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
 );
 ---
