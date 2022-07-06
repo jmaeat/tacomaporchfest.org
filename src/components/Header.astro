@@ -1,6 +1,5 @@
 ---
 import SiteBanner from '@/components/SiteBanner.astro';
-import { Icon } from 'astro-icon';
 
 const navLinks = [
 	{
@@ -25,16 +24,16 @@ const navLinks = [
 	},
 ];
 ---
-<nav class="first:text-center relative container border-b border-copy border-opacity-10">
+<nav class="first:text-center relative container">
 	<SiteBanner />
 	<ul
-		class="flex gap-6 sm:gap-x-6 justify-center md:gap-x-12 flex-wrap font-medium text-sm lg:text-lg leading-none py-3"
+		class="flex gap-6 sm:gap-x-6 justify-center md:gap-x-12 flex-wrap font-bold text-base lg:text-2xl leading-none py-3"
 		role="list"
 	>
 		{navLinks.map((navLink) =>
 			<li>
 				<a 
-					class="font-medium px-3 py-2 lg:py-[10px] border-b-4 border-transparent hover:border-tertiary active:border-tertiary focus:border-tertiary transition-colors duration-200 ease-in-out" href={navLink.href}
+					class="px-3 py-2 lg:py-[10px] border-b-4 border-transparent hover:border-secondary active:border-secondary focus:border-secondary transition-colors duration-200 ease-in-out" href={navLink.href}
 				>
 						{navLink.name}
 				</a>
