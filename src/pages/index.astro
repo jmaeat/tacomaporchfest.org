@@ -2,6 +2,8 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import HeroSection from '@components/HeroSection.astro';
 import PostPreview from '@components/PostPreview.astro';
+import * as lineup from '@/pages/updates/current-artist-lineup.md';
+import { Markdown } from 'astro/components';
 import { Icon } from 'astro-icon';
 
 const title = 'Free Music Festival in Tacoma, WA';
@@ -9,14 +11,81 @@ const description =
 	'Tacoma Porchfest is a free, walkable music festival in Central Tacoma. Help us accomplish our inaugural year!';
 
 let allPosts = await Astro.glob('./updates/*.md');
-allPosts = allPosts.filter((x) => x.frontmatter.hidden != true).sort(
-	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
-);
+allPosts = allPosts
+	.filter((x) => x.frontmatter.hidden != true)
+	.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 ---
 
 <BaseLayout {title} {description}>
 	<HeroSection />
-	<div class="container grid md:grid-cols-2 gap-8">
+	<section class="container" aria-labelledby="#what-is">
+		<h2 id="what-is" class="text-center text-4xl md:text-5xl font-bold font-serif mb-4">
+			What is Porchfest?
+		</h2>
+		<p class="max-w-xl mx-auto text-center text-lg md:text-xl">
+			Porchfest is a free, walkable music festival where front porches become musical stages for one
+			magical afternoon.
+		</p>
+		<div class="container grid md:grid-cols-2 gap-8 lg:gap-0 my-16">
+			<div class="max-w-md my-auto">
+				<h3 class="text-2xl font-serif md:text-4xl font-bold mb-3">Get on the map</h3>
+				<p class="text-lg md:text-xl mb-5">
+					We’re looking for neighbors to volunteer your porch (or front yard) <em>and</em> we are looking
+					for local musicians and artists to perform!
+				</p>
+				<a
+					class="underline text-secondary text-lg md:text-xl hover:text-opacity-70"
+					href="/porch-owners">Sign up to host &rarr;</a
+				>
+			</div>
+			<div>
+				<figure>
+					<img class="object-cover" src="/tacomapf_map.png" alt="" loading="lazy" />
+					<figcaption class="sr-only">
+						A map of Central Tacoma; from West to East: Alder St. to Sprague Ave; from North to
+						South: 6th Ave to 12th St.
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+	<section class="bg-tertiary text-background text-center" aria-labelledby="#support-us">
+		<div class="container py-20">
+			<h2 id="support-us" class="text-4xl md:text-5xl font-bold font-serif mb-4">
+				Support the bands!
+			</h2>
+			<p class="max-w-xl mx-auto text-center text-lg md:text-xl">
+				We are all volunteers making this happen, we need your help to pay Porchfest performers.
+				Venmo: <a
+					class="underline underline-offset-2 decoration-2 hover:no-underline"
+					href="https://account.venmo.com/u/TacomaPorchfest"
+					rel="nofollow noopener noreferer">@tacomaporchfest</a
+				>
+			</p>
+		</div>
+	</section>
+	<section class="my-16 container" aria-labelledby="#lineup">
+		<h2 id="lineup" class="text-center text-4xl md:text-5xl font-bold font-serif mb-4">
+			Porchfest line-up<br class="inline sm:hidden" />
+			<span class="text-secondary">(</span>&nbsp;so far&nbsp;<span class="text-secondary">)</span>
+		</h2>
+		<p class="max-w-xl mx-auto text-center text-lg md:text-xl">
+			We want your talent, band submissions are open until mid-July. Check out the mix of artists on
+			the line-up already — Tacoma has so much talent to share.<br />
+			<a
+				class="inline-block underline text-secondary text-lg md:text-xl hover:text-opacity-70 mt-3"
+				href="/artists">Sign up to perform &rarr;</a
+			>
+		</p>
+		<div
+			class="border-y-4 py-8 border-dashed border-secondary marker:text-secondary max-w-prose mx-auto prose prose-lg md:prose-xl mt-10"
+		>
+			<Markdown set:html={lineup.rawContent()}>
+
+			</Markdown>
+		</div>
+	</section>
+	<!-- <div class="container grid md:grid-cols-2 gap-8">
 		<div class="text-right">
 			<ul role="list" class="mb-10 space-y-2">
 				{allPosts.map((post) =>
@@ -44,5 +113,5 @@ allPosts = allPosts.filter((x) => x.frontmatter.hidden != true).sort(
 					<Icon name="fe:link-external" class="w-5 h-5 inline mb-[5px] ml-05" />
 			</a>
 		</div>
-	</div>
+	</div> -->
 </BaseLayout>

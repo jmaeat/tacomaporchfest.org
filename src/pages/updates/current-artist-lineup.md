@@ -3,12 +3,8 @@ layout: ../../layouts/PostLayout.astro
 title: Current Artist Lineup
 description: The latest lineup of artists performing at our inaugural festival this August.
 date: 2022-06-06
-updated: 2022-06-19
+updated: 2022-07-05
 ---
-
-We are accepting artists and performers until mid-July when we play match-maker with the porches who have signed up.  We are so excited about the mix of artists on the line-up — look it over, you probably know more than one of them as one of your neighbors!  Who knew our neighborhood and city was full of so much talent ready to share with all of us?
-
-## List of Artists (so far) 👩‍🎤
 
 - **KrazyKats** (Folk/pop blues) - [Demo](https://youtu.be/OfV0_VEhurY)
 - **Chase Willett** (Folk, Americana) — [Website](http://chasewillettmusic.com/)
@@ -26,5 +22,18 @@ We are accepting artists and performers until mid-July when we play match-maker 
 - **Henry Hagen Band** (Indie, Alternative Rock) — [Website](https://www.reverbnation.com/henryhagenband)
 - **KTQA LP FM 95.3 (Radio Station)** (Variety) — [Website](https://www.ktqa.org)
 - **Bread & Roses Chorus** (Folk, Americana) — [Website](https://www.marxists.org/subject/women/poetry/bread.html)
-
-As more artists sign up, we will gladly update this list!
+- **Jeremy and friends** (Jazz) — [Website](http://jeremybacon.com/)
+- **Esther & Ben** (Jazz/Swing)
+- **Jakob Jess Band** (Acoustic/Folk) — [Website](https://www.youtube.com/channel/UCo3VQir-eCQLdV-agfYXehw/videos)
+- **Robuck & Co** (Alternative Folk/Rock) — [Demo](https://www.instagram.com/p/CbzA-AojIsD/?hl=en)
+- **Sun Atoms** (Neo-Psychedelic Electro Rock) — [Website](https://linktr.ee/SunAtoms)
+- **Plaid Lion** (Jazz/Blues/LoFi Indie Rock) — [Website](https://plaidlion.net)
+- **Hot Rush** (Alternative Rock) — [Website](https://archive.org/details/hotrushglue)
+- **Uncle Drum Hands** (Pop/Folk/Experimental)
+- **The Tacoma Home Family Band** (Covers)
+- **Smokey Wonder** (World Beats/Electronic/Hip-Hop) — [Website](https://www.instagram.com/smokey_wonder/)
+- **The Window Smashing Job Creators** (Jazz/Folk/Punk/Klezmer) — [Website](https://thewindowsmashingjobcreators.bandcamp.com/)
+- **Billy's Universe** (Folk/Pop/Emo) — [Website](https://billysuniverse.bandcamp.com)
+- **Burn Out Brass Band** (Gay bar sing-alongs and anti-fascist anthems) — [Website](www.burnoutbrassband.com)
+- **Chaotic Noise Marching Corps** (Hard Punk Rock/Various)
+- **Innocent Civilians** (Ambient/Noise/Indie Rock) — [Website](https://innocentcivilians.bandcamp.com)
