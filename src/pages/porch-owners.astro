@@ -1,9 +1,5 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import FormEmbed from '@components/FormEmbed.astro';
-
-const formURL =
-	'https://docs.google.com/forms/d/e/1FAIpQLSczgkg6v7A_CSeRYz-AqgI-rysBxGL5HWABSKR6Ea_6ENBQ2w/viewform?embedded=true';
 
 const title = 'Porch Owners Application',
 	description = 'Sign up to be an incredible host for our inaugural season!';
@@ -12,7 +8,7 @@ const title = 'Porch Owners Application',
 <BaseLayout {title} {description}>
 	<section aria-labelledby="#title" class="container my-8 lg:my-16">
 		<h1 id="title" class="font-bold font-serif text-5xl text-center">Porch Owners Application</h1>
-		<div class="grid md:grid-cols-2 gap-8 pt-20">
+		<div class="pt-20">
 			<div class="lg:pr-8">
 				<h2 class="text-2xl font-serif font-bold mb-4 md:mb-6 md:text-4xl">Sign-up Information</h2>
 				<p>
@@ -24,9 +20,9 @@ const title = 'Porch Owners Application',
 					the best neighborhood ever!
 				</p>
 			</div>
-			<div>
-				<FormEmbed href={formURL} title="Porchfest Porch Owners Sign-up Form" />
-			</div>
+			<h5 class="mt-10 text-center text-lg font-serif font-bold">
+				Submissions closed for this year!
+			</h5>
 		</div>
 	</section>
 </BaseLayout>
